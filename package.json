@@ -1,0 +1,40 @@
+{
+  "name": "paye-calculator",
+  "version": "1.0.0",
+  "description": "Kenya PAYE tax, NSSF, and SHIF deductions based on the latest KRA guidelines.",
+  "keywords": [
+    "paye",
+    "kra",
+    "kenya",
+    "payroll",
+    "salary",
+    "calculator",
+    "shif",
+    "nssf",
+    "tax",
+    "net-pay"
+  ],
+  "homepage": "https://github.com/dennesnjoroge/paye-calculator#readme",
+  "bugs": {
+    "url": "https://github.com/dennesnjoroge/paye-calculator/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dennesnjoroge/paye-calculator.git"
+  },
+  "license": "MIT",
+  "author": "Dennis Njoroge dennesmwangi55@gmail.com",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1"
+  }
+}
