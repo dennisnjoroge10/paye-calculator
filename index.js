@@ -6,6 +6,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 // routes
+import apiRoutes from "./src/api/routes/api.routes.js";
 import appRoutes from "./src/app/routes/app.routes.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -34,6 +35,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 // routes config
+app.use("/api/v1", apiRoutes);
 app.use("/", appRoutes);
 
 // server binding
