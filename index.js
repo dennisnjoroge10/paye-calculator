@@ -8,6 +8,7 @@ import { fileURLToPath } from "url";
 // routes
 import apiRoutes from "./src/api/routes/api.routes.js";
 import appRoutes from "./src/app/routes/app.routes.js";
+import AppError from "./src/api/utils/error.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -37,6 +38,16 @@ app.set("views", path.join(__dirname, "views"));
 // routes config
 app.use("/api/v1", apiRoutes);
 app.use("/", appRoutes);
+
+// global error handler
+app.use((error, req, res, next) => {
+  if (error instanceof AppError) {
+    res.status(error.statusCode).json({
+      status: "fail",
+      message: error.message,
+    });
+  }
+});
 
 // server binding
 app.listen(port, "0.0.0.0", () => {
