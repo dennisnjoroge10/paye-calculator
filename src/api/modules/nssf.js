@@ -17,5 +17,7 @@ export const calculateNSSF = (grossPay) => {
   );
   const tierTwoContributions = tierTwoEarnings * NSSF_RATE;
 
-  return tierOneContributions + tierTwoContributions;
+  const nssf = tierOneContributions + tierTwoContributions;
+
+  return Number(nssf.toFixed(2));
 };
